@@ -1,162 +1,193 @@
+ul {
+  list-style: none;
+}
 /* Fading animation */
 .slideRight {
-    -webkit-animation-name: slideRight;
-    -webkit-animation-duration: 1.5s;
-    animation-name: slideRight;
-    animation-duration: 1.5s;
+  -webkit-animation-name: slideRight;
+  -webkit-animation-duration: 1.5s;
+  animation-name: slideRight;
+  animation-duration: 1.5s;
 }
 .slideLeft {
-    -webkit-animation-name: slideLeft;
-    -webkit-animation-duration: 1.5s;
-    animation-name: slideLeft;
-    animation-duration: 1.5s;
+  -webkit-animation-name: slideLeft;
+  -webkit-animation-duration: 1.5s;
+  animation-name: slideLeft;
+  animation-duration: 1.5s;
 }
 
 @-webkit-keyframes slideRight {
-    0% {
-        transform: rotate(0) translate(0);
-        opacity: 1;
-        }
-        25% {
-            transform: translateX(600px) ;
-        }
-        50% {
-            transform: translate(600px) ;
-        }
-        100% {
-            transform: rotate(45deg) translate(500px, 600px) ;
-            opacity: .4
-        }
-    }
-
-@keyframes slideRight {
-    0% {
+  0% {
     transform: rotate(0) translate(0);
     opacity: 1;
-    }
-    25% {
-        transform: translateX(600px) ;
-    }
-    50% {
-        transform: translate(600px) ;
-    }
-    100% {
-        transform: rotate(45deg) translate(500px, 600px) ;
-        opacity: .4
-    }
+  }
+  25% {
+    transform: rotate(-10deg) translateX(calc(1vw + 15rem));
+  }
+  50% {
+    transform: rotate(-20deg) translate(calc(1vw + 15rem), calc(1vh + 15rem));
+  }
+  100% {
+    transform: rotate(-20deg) translate(0.8vw, calc(1vh + 15rem));
+    opacity: 0.4;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: rotate(0) translate(0);
+    opacity: 1;
+  }
+  25% {
+    transform: rotate(-10deg) translateX(calc(1vw + 15rem));
+  }
+  50% {
+    transform: rotate(-20deg) translate(calc(1vw + 15rem), calc(1vh + 15rem));
+  }
+  100% {
+    transform: rotate(-20deg) translate(0.8vw, calc(1vh + 15rem));
+    opacity: 0.4;
+  }
 }
 
 @-webkit-keyframes slideLeft {
-    0% {
-        transform: rotate(0) translate(0);
-        opacity: 1;
-        }
-        25% {
-            transform: translateX(-600px) ;
-        }
-        50% {
-            transform: translate(-600px) ;
-        }
-        100% {
-            transform: rotate(-45deg) translate(-500px, -600px) ;
-            opacity: .4
-        }
-    }
+  0% {
+    transform: scale(1.1) translate(0);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.1) translateX(calc(-1vw - 15rem));
+  }
+  50% {
+    transform: scale(1.2) translate(calc(-1vw - 15rem), calc(1vh + 15rem));
+  }
+  100% {
+    transform: scale(1.5) translate(-1vw, calc(1vh + 15rem));
+    opacity: 0.4;
+  }
+}
 
 @keyframes slideLeft {
-    0% {
-    transform: rotate(0) translate(0);
+  0% {
+    transform: scale(1.1) translate(0);
     opacity: 1;
-    }
-    25% {
-        transform: translateX(-600px) ;
-    }
-    50% {
-        transform: translate(-600px) ;
-    }
-    100% {
-        transform: rotate(-45deg) translate(-500px, -600px) ;
-        opacity: .4
-    }
+  }
+  25% {
+    transform: scale(1.1) translateX(calc(-1vw - 15rem));
+  }
+  50% {
+    transform: scale(1.2) translate(calc(-1vw - 15rem), calc(1vh + 15rem));
+  }
+  100% {
+    transform: scale(1.5) translate(-1vw, calc(1vh + 15rem));
+    opacity: 0.4;
+  }
 }
 body {
-    margin: 0;
+  margin: 0;
 }
 #app {
-    /* margin: 30px; */
+    background-color: #eee;
+    padding: 0.3rem;
+  /* margin: 30px; */
 }
 .slide-container {
-    width: 100%;
-    height: 100vh;
-    margin: auto;
-    display: flex;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    padding: 0;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  margin: auto;
+  display: flex;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 0.5rem;
 }
 .slide-container .slide-item {
-    background-color: #000;
-    list-style: none;
-    width: 100%;
-    color: seashell;
+  background-color: #000;
+  width: 100%;
+  color: seashell;
 }
 .slide-container .slide-item .slide-capture {
-    position: absolute;
-    bottom: 5rem;
-    left: 1rem;
-    text-shadow: 2px 2px black;
+  position: absolute;
+  bottom: 5rem;
+  left: 1rem;
+  text-shadow: 2px 2px black;
 }
 .slide-container .slide-item .slide-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .slide-container .slide-icons {
-    display: flex;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0%;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 0.5rem;
-    justify-content: center;
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0%;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 .slide-container .slide-icons i {
-    margin: 0 0.5rem;
-    border: 1px solid #000;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    text-align: center;
-    line-height: 2.1;
-    cursor: pointer;
+  margin: 0 0.5rem;
+  border: 1px solid #000;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
 }
+.slide-container .slide-icons i:nth-child(odd) {
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.9;
+  border-color: white;
+  color: white;
+  font-size: 0.8rem;
+}
+.slide-container .slide-icons i:nth-child(even) {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2.1;
+}
+
 .slide-container .slide-icons i.fa-heart {
-    color: #00D0D3;
-    border-color: #00D0D3;
+  color: #00d0d3;
+  border-color: #00d0d3;
 }
 .slide-container .slide-icons i.fa-heart:hover {
-    background-color: #00D0D3;
-    color: #fff;
+  background-color: #00d0d3;
+  color: #fff;
 }
 .slide-container .slide-icons i.fa-times {
-    color: #FF0044;
-    border-color: #FF0044;
+  color: #ff0044;
+  border-color: #ff0044;
 }
 .slide-container .slide-icons i.fa-times:hover {
-    background-color: #FF0044;
-    color: #fff;
+  background-color: #ff0044;
+  color: #fff;
 }
 
 .slide-container .slide-arrows a {
-    position: absolute;
-    top: 50%;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
 }
 .slide-container .slide-arrows .prev {
-    left: 6%;
+  left: 6%;
 }
 .slide-container .slide-arrows .next {
-    right: 6%;
+  right: 6%;
+}
+.app-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin-top: 7px;
+}
+.app-icon .app-icon-item {
+    padding: 1rem;
+}
+.app-icon .app-icon-item i {
+    color: #ccc;
+    cursor: pointer;
 }
