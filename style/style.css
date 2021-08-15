@@ -86,7 +86,7 @@ body {
   top: 67%;
   background: linear-gradient(to top, #000 70%, transparent);
   padding: 0.5rem;
-  /* z-index: 99; */
+  border-radius: 0.5rem;
 }
 .slide-container .slide-icons .icon-list {
   display: flex;

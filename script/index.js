@@ -201,10 +201,10 @@ mc.on("swipe", function (e) {
                 break;
             }
         }
-        myActiveSlide.style.transition = 'transform 500ms ease-out'
+        myActiveSlide.style.transition = 'transform 300ms ease-out'
         myActiveSlide.style.transform = `${translate} rotate(${angle < 0 ? '15deg' : '-15deg'})`;
 
-        if ((Math.abs(deltaX) + 100) >= window.innerWidth || (Math.abs(deltaY) + 100) >= window.innerHeight) {
+        if ((Math.abs(deltaX) + 150) >= window.innerWidth || (Math.abs(deltaY) + 150) >= window.innerHeight) {
             if (deltaX < 0) {
                 slideToTheNext(-1);
             } else {
